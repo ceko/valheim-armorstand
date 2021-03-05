@@ -1,0 +1,61 @@
+{
+    "Localization": {
+        "English": {
+            "ceko_piece_slot_filled": "That slot is filled",
+            "ceko_piece_armorstand_cycle_poses": "Cycle through poses",
+            "ceko_piece_armorstand_attach": "Attach an armor/weapon",
+            "ceko_piece_armorstand_take": "Take all items",
+            "ceko_piece_armorstand_full": "Armor stand",
+            "ceko_piece_armorstand_description": "A roughly-carved armor stand that can hold most of your armor and weapons",
+            "ceko_piece_armorstand_cantattach": "Can't attach that item"
+        }
+    },
+    "Pieces": {
+        "FullArmorStand" : {            
+            "requirements": [
+                {
+                    "item": "FineWood",
+                    "amount": 8
+                },
+                {
+                    "item": "BronzeNails",
+                    "amount": 4
+                }
+            ],
+            "placeEffects": [
+                {
+                    "effect": "vfx_Place_wood_pole"
+                },
+                {
+                    "effect": "sfx_build_hammer_wood"
+                }
+            ],
+            "craftingStation": {
+                "station": "piece_workbench"
+            },
+            "destroyedEffects": [
+                {
+                    "effect": "sfx_wood_destroyed"
+                },
+                {
+                    "effect": "vfx_SawDust"
+                }
+            ],
+            "hitEffects": [
+                {
+                    "effect": "vfx_SawDust"
+                }
+            ],
+            "itemStand": {
+                "effects": [
+                    {
+                        "effect": "vfx_pickable_pick"
+                    },
+                    {
+                        "effect": "sfx_pickable_pick"
+                    }
+                ]
+            }
+        }
+    }
+}

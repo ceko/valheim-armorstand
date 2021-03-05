@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 3652203440
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: valheim-stands
+      Dependencies: {}

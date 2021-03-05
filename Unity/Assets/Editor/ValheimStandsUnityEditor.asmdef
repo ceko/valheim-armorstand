@@ -1,0 +1,17 @@
+{
+    "name": "ValheimStandsUnityEditor",
+    "references": [
+        "GUID:d7b8583402d57eb4eb979e4642423930"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

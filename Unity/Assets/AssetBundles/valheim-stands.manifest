@@ -1,0 +1,77 @@
+ManifestFileVersion: 0
+CRC: 1059281282
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 692bfe0e7643f21eb1f40ff41a7c852d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: de52936da366fb5296fe4949c104f428
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: e26fb1f015271ba4688624450169642d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 90275d23505a9874e9184cb9961e9eb9, type: 3}
+- Class: 114
+  Script: {fileID: 895252998, guid: 1c287c93f5e75094297a1f4662483cd9, type: 3}
+- Class: 114
+  Script: {fileID: 1521249158, guid: 1c287c93f5e75094297a1f4662483cd9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71efbb99a5faf6f4995ee0b12194f421, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 205
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 319
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/ArmsMask.mask
+- Assets/Models/stand.blend
+- Assets/Images/ArmorStandIcon.fw.png
+- Assets/Materials/WoodStand.mat
+- Assets/Prefabs/FullArmorStand.prefab
+- Assets/Prefabs/StandVisual.prefab
+- Assets/Prefabs/StandAnimator.controller
+- Assets/Prefabs/Mod.prefab
+- Assets/Prefabs/LeftHandMask.mask
+- Assets/Images/ArmorStand_d.fw.png
+- Assets/Prefabs/RightHandMask.mask
+- Assets/Models/reference.blend
+Dependencies: []
