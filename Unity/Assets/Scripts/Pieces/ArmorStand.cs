@@ -63,10 +63,10 @@ namespace ValheimStands.Unity
                 foreach (SkinnedMeshRenderer skinnedMeshRenderer in visualObject.gameObject.GetComponentsInChildren<SkinnedMeshRenderer>()) {
                     skinned = true;
                     // set root bones for skinned meshes
-                    ZLog.Log($"Setting skinned mesh bones for {skinnedMeshRenderer}");
+                    //ZLog.Log($"Setting skinned mesh bones for {skinnedMeshRenderer}");
                     Transform rootBone = armorStand.chestStand.rootBone;
                                                 
-                    ZLog.Log($"Setting root bone to {rootBone}");
+                    //ZLog.Log($"Setting root bone to {rootBone}");
                     if(skinnedMeshRenderer.rootBone != null) {
                         skinnedMeshRenderer.rootBone.SetPositionAndRotation(
                             rootBone.position, 
@@ -175,7 +175,7 @@ namespace ValheimStands.Unity
 
             public bool needsVisualUpdate() {
                 var itemWanted = zdo.GetString(zdoVar);
-                ZLog.Log($"Checking slot with vo: {visualObject?.prefabName} and item {itemWanted}");
+                //ZLog.Log($"Checking slot with vo: {visualObject?.prefabName} and item {itemWanted}");
                 if(String.IsNullOrEmpty(itemWanted)) {
                     // if the item wanted is blank and the gameobject exists, we need to clear it
                     return visualObject != null;
@@ -486,9 +486,7 @@ namespace ValheimStands.Unity
         }
 
         public bool Interact(Humanoid user, bool hold)
-        {
-            ZLog.Log("Owner: " + this.m_nview.IsOwner());
-
+        {            
             if (hold)
                 return false;
 
@@ -683,7 +681,7 @@ namespace ValheimStands.Unity
                 ZLog.LogWarning("Missing item prefab " + wantedItem);
             } else {
                 ItemDrop component = wantedPrefab.GetComponent<ItemDrop>();                
-                ZLog.Log("Running onCreateVisual");
+                //ZLog.Log("Running onCreateVisual");
                 slot.OnCreateVisual(slot, component);
                 
                 // This is the gameobject in the prefab that gets instantiated and attached to the stand
@@ -704,8 +702,7 @@ namespace ValheimStands.Unity
                         attachPoint = slot.GetAttachPoint(slot).transform;
                     }
                     var attachedEquipment = UnityEngine.Object.Instantiate<GameObject>(wantedAttachPrefab, attachPoint.position, attachPoint.parent.rotation, attachPoint.parent);
-                    ZLog.Log($"attach point rotation: {attachPoint.rotation}, attachedEquipment rotation: {attachedEquipment.transform.rotation}");
-
+                    
                     slot.visualObject = new VisualEquipment {
                         prefabName = wantedItem,
                         drop = wantedPrefab.GetComponent<ItemDrop>(),
@@ -723,7 +720,7 @@ namespace ValheimStands.Unity
                     }
 
                     foreach (Cloth cloth in attachedEquipment.GetComponentsInChildren<Cloth>()) {
-                        ZLog.Log("Setting cloth colliders");
+                        //ZLog.Log("Setting cloth colliders");
 
                         if (this.m_clothColliders.Length != 0) {
                             if (cloth.capsuleColliders.Length != 0)

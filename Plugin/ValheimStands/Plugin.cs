@@ -26,16 +26,15 @@ namespace ValheimStands
         }
 
         private void Awake()
-        {                                       
-            Plugin.Logger = base.Logger;                        
-            
+        {   
+            Plugin.Logger = base.Logger;
+
             Logger.LogInfo("Applying patches.");            
             harmony.PatchAll();
             
-            Logger.LogInfo($"Asset bundle loading at path {Plugin.AssetPath}");
-            Logger.LogInfo(AppConfig.instance.Pieces);
+            Logger.LogInfo($"Asset bundle loading at path {Plugin.AssetPath}");            
             foreach(GameObject piece in UnityBundle.Database.Pieces) {
-                Logger.LogInfo($"Setting up {piece.name}");                                
+                Logger.LogInfo($"Setting up {piece.name}");
                 var config = AppConfig.instance.Pieces[piece.name];
                 Logger.LogInfo(config);
             }
@@ -44,7 +43,7 @@ namespace ValheimStands
         private void OnDestroy()
         {
             Logger.LogInfo("Unapplying patches.");
-            harmony.UnpatchAll();
+            harmony.UnpatchSelf();
         }
     }
 }

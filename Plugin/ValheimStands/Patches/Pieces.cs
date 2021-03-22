@@ -8,11 +8,10 @@ using ValheimStands.Utils;
 using GameConsole = Console;
 using UnityEngine;
 using System.Collections.Generic;
+using System.IO;
 
-//TODO: override VisEquipment AttachBackItem to hide fist weapon on sheathe
-
-namespace ValheimStands.Patches.Pieces {
-        
+namespace ValheimStands.Patches.Pieces {        
+    
     [HarmonyPatch(typeof(ZNetScene), "Awake")]
     public static class ZNetSceneDatabaseAwake
     {
@@ -25,7 +24,6 @@ namespace ValheimStands.Patches.Pieces {
                 }
 
                 Plugin.Logger.LogInfo("Adding localization");
-
                 // set up just english localization
                 foreach(KeyValuePair<string, string> entry in AppConfig.instance.Localization["English"]) {
                     Localization.instance.AddWord(entry.Key, entry.Value);
@@ -35,7 +33,11 @@ namespace ValheimStands.Patches.Pieces {
             }
         }  
 
+        static bool piecesAdded = false;
         public static void Postfix(ref ZNetScene __instance) {
+            if(piecesAdded) return;
+            piecesAdded = true;
+
             try {
                 Plugin.Logger.LogInfo("Adding pieces to the hammer.");
                 var hammer = ZNetScene.instance.GetPrefab("Hammer");
@@ -48,7 +50,7 @@ namespace ValheimStands.Patches.Pieces {
                     piece.LoadConfig(pieceConfig);
                     Plugin.Logger.LogInfo($"Adding {piece} to the hammer's piece table.");
                     hammer.GetComponent<ItemDrop>().m_itemData.m_shared.m_buildPieces.m_pieces.Add(pieceGo);
-                }                             
+                }                
             }catch(Exception exc) {
                 Plugin.Logger.LogError(exc);
             } 

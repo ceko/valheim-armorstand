@@ -16,10 +16,7 @@ namespace ValheimStands {
         public static readonly BundleResource<GameObject> Mod = new BundleResource<GameObject>("Mod");
 
         public static ValheimStands.Unity.Database Database { 
-            get {
-                Plugin.Logger.LogInfo("Getting database");
-                Plugin.Logger.LogInfo(Mod.Value);
-                
+            get {                                
                 return Mod.Value.GetComponent<ValheimStands.Unity.Database>();
             }
         }        
